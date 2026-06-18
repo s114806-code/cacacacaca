@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@400;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Georgia", "Noto Serif TC", serif;
+  --font-sans: "Noto Sans TC", sans-serif;
+  
+  --color-warm-50: #fdfcf8;
+  --color-warm-100: #f9f8f4;
+  --color-warm-200: #f5f2e8;
+  --color-warm-300: #e8e4d9;
+  --color-warm-400: #c9c4b1;
+  --color-warm-800: #423f3b;
+  --color-warm-900: #2c2a27;
+  
+  --color-brand-red: #5A5A40;
+  --color-brand-red-light: #707052;
+  --color-brand-gold: #828266;
+  --color-brand-gold-light: #9d9d82;
+}
+
+body {
+  background-color: var(--color-warm-50);
+  color: var(--color-warm-800);
+  font-family: var(--font-serif);
+}
+
+.font-chinese-serif {
+  font-family: var(--font-serif);
+}
+
+/* Custom fade scroll bar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-warm-100);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-brand-gold);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-red);
+}

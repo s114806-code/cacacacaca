@@ -1,0 +1,8 @@
+{
+  "name": "中式家庭餐廳訂位系統",
+  "description": "一個溫馨、典雅的中式家庭餐廳訂位系統，具備會員登入、註冊、菜單瀏覽與預約管理功能，並整合 Firebase Firestore 進行資料管理。",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

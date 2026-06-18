@@ -1,0 +1,48 @@
+{
+  "entities": {
+    "Reservation": {
+      "title": "Reservation",
+      "description": "Chinese restaurant reservation details",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "name": { "type": "string" },
+        "phone": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "dateTime": { "type": "string" },
+        "paymentType": { "type": "string", "enum": ["Cash", "CreditCard", "MobilePay"] },
+        "guests": { "type": "number" },
+        "status": { "type": "string", "enum": ["pending", "confirmed", "cancelled"] },
+        "notes": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["userId", "name", "phone", "email", "dateTime", "paymentType", "guests", "status"]
+    },
+    "Menu": {
+      "title": "Menu",
+      "description": "Chinese restaurant menu dishes",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "price": { "type": "number" },
+        "category": { "type": "string" },
+        "image": { "type": "string" },
+        "isPopular": { "type": "boolean" }
+      },
+      "required": ["name", "price", "category", "image"]
+    }
+  },
+  "firestore": {
+    "/reservations/{reservationId}": {
+      "schema": "Reservation",
+      "description": "User reservations"
+    },
+    "/menu/{dishId}": {
+      "schema": "Menu",
+      "description": "Restaurant dishes"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Catch-all default deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Menu rules: Anyone can read menu, write is forbidden (managed offline or by admin)
+    match /menu/{dishId} {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    // Reservations rules
+    match /reservations/{reservationId} {
+      allow create: if request.auth != null && request.resource.data.userId == request.auth.uid;
+      allow read, update, delete: if request.auth != null && resource.data.userId == request.auth.uid;
+    }
+  }
+}
